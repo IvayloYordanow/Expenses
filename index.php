@@ -6,11 +6,8 @@ require 'Array.php';
         <a href="form.php">Expenses</a>
         
         
-      
+     
         
-        
-
-
         
         
         <table border="1">
