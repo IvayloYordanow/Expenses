@@ -47,20 +47,12 @@ require 'Array.php';
             if(file_exists('data.txt')){
                 
                 $result=  file('data.txt');
-                $number = 1;
+                
                 foreach ($result as $value) {
                     $columns=  explode('!', $value);
                     
                     
-                if ($group != $columns[3] && $group != 0) {
-                continue;
-            }
-            $sum+=(float) $columns[2];    
-                 $number++;
-                 
-                if($number <= 1){
-        echo 'No Costs ' ;
-    }
+                
                     
                     echo '<tr>
                  <td>'.$columns[0].'</td>
@@ -108,3 +100,4 @@ if (isset($_POST['group'])) {
     <?PHP
 include 'footer.php';
 ?>
+
