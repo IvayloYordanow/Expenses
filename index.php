@@ -10,7 +10,17 @@ require 'Array.php';
            <div>
            <select name="groups">
                <?php
-               $groups=$_POST["group"];
+               
+               if(isset ($_POST["groups"])){
+                   $groups=$_POST["groups"];
+                   
+               }
+               
+               else {
+                   
+                  $groups=''; 
+                   
+               }
                
                foreach ($Type as $key=> $value)
                    {
@@ -20,7 +30,7 @@ require 'Array.php';
                    else {
                        $selected='';
                    }
-                  echo '<option value= "'.$key.'">'.$value.'</option>';
+                  echo '<option '. $selected. ' value= "'.$key.'">'.$value.'</option>';
                }
                
                ?> 
@@ -47,57 +57,47 @@ require 'Array.php';
             if(file_exists('data.txt')){
                 
                 $result=  file('data.txt');
-                
+             
                 foreach ($result as $value) {
-                    $columns=  explode('!', $value);
-                    
-                    
+                                 $columns=  explode('!', $value);
                 
-                    
-                    echo '<tr>
-                 <td>'.$columns[0].'</td>
-                 <td>'.$columns[1].'</td>
-                 <td>'.$columns[2].'</td>
-                 <td>'.$Type[trim($columns[3])].'</td>    
-                         </tr>';
-                    
-                }
-            }
-            
-            ?>
-            
-            
-            
-            
-            
-            <?php
-if (isset($_POST['group'])) {
-    $group = $_POST['group'];
-}
- $group=-1;
-
-  if ($group === trim($columns[3])){
-      echo '<tr>
-                 <td>'.$columns[0].'</td>
-                 <td>'.$columns[1].'</td>
-                 <td>'.$columns[2].'</td>
-                 <td>'.$Type[trim($columns[3])].'</td>    
-                         </tr>';
-                    
+                 
+                                 if (isset($_POST['groups'])) {
+                                             $group = $_POST['groups'];
+                                             
+                                 }
+                                   else {
+                                       $group=-1;
+                                   }
+                                   
+                                  if ($group ==-1||$group==trim($columns[3]) ){
+                                               echo '<tr>
+                                                <td>'.$columns[0].'</td>
+                                                 <td>'.$columns[1].'</td>
+                                                 <td>'.$columns[2].'</td>
+                                                 <td>'.$Type[trim($columns[3])].'</td>    
+                                                 </tr>';
       
-      
-  }      
-
-  else {
-      
-      
-  }
+                                     }   
+                                     
+               }
+          }
+  
   
 
 ?>
+                    
+                
+                    
+                   
+            
+            
+            
+            
+            
+            
             
         </table>
     <?PHP
 include 'footer.php';
 ?>
-
