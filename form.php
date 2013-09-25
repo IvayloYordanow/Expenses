@@ -108,8 +108,9 @@ if($_POST){
             
         <table>
             <tr>
-                Please select a type from the drop down menu
-                <tr>
+                <td> Select a type from the drop down menu<td>
+            </tr>
+            
             <tr>
                 <td>
                     <select name="group">
@@ -124,9 +125,9 @@ if($_POST){
                    
                     </select>
             
-                 </td> 
+                 
         
-                <td>
+                
                     <input type="submit" value="Add"></div>
                 </td>
             </tr>
