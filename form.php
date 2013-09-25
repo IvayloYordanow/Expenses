@@ -89,19 +89,19 @@ if($_POST){
         <td> <input type="text" name="date" value="dd/mm/yyyy" id="date" /></td>
                 </tr>
                 
-                
-                
+               
                 <tr>
         <td><label for="name">Name:</label></td>
         <td><input type="text" name="username" id="name"/></td>
                 </tr>
                 
-               <tr> 
+                
+                <tr> 
         <td><label for="costs">Cost:</label></td> 
         <td><input type="text" name="costs" id="costs"/></td>
-               </tr>
+                </tr>
             
-               </table>
+             </table>
             
             <br>
             
